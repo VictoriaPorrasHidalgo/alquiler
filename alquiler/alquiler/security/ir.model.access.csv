@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_alquiler_pelicula_acl,access_alquiler_pelicula_default,model_alquiler_pelicula,base.group_user,1,1,1,1
+access_alquiler_genero_acl,access_alquiler_genero_default,model_alquiler_genero,base.group_user,1,1,1,1
+access_alquiler_cliente_acl,access_alquiler_cliente_default,model_alquiler_cliente,base.group_user,1,1,1,1
+access_alquiler_prestamo_acl,access_alquiler_prestamo_default,model_alquiler_prestamo,base.group_user,1,1,1,1
