@@ -1,0 +1,202 @@
+<odoo>
+  <data>
+    <!-- Vista tree de películas -->
+
+    <record model="ir.ui.view" id="alquiler_pelicula_tree">
+      <field name="name">Vista árbol de película</field>
+      <field name="model">alquiler.pelicula</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Título de la película"/>
+          <field name="pelicula_id" string="ID"/>
+          <field name="director" string="Director"/>
+          <field name="year" string="Año"/>
+          <field name="description" string="Descripción"/>
+          <field name="rented" string="Alquilado"/>
+          <field name="genre_id" string="Género"/>
+        </tree>
+      </field>
+    </record>
+
+ <!-- Vista formulario de películas -->
+
+    <record model="ir.ui.view" id="alquiler_pelicula_form">
+    <field name="name">Vista formulario de película</field>
+    <field name="model">alquiler.pelicula</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name" string="Título de la película"/>
+                    <field name="director" string="Director"/>
+                    <field name="pelicula_id" string="ID"/>
+                    <field name="genre_id" string="Género"/>
+                    <field name="year" string="Año"/>
+                    <field name="description" string="Descripción"/>
+                    <field name="rented" string="Alquilado"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+    <!-- Vista tree de género -->
+
+    <record model="ir.ui.view" id="alquiler_genero_tree">
+      <field name="name">Vista árbol de género</field>
+      <field name="model">alquiler.genero</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Género"/>
+          <field name="description" string="Descripción"/>
+          <field name="id" string="ID"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista formulario de géneros -->
+
+    <record model="ir.ui.view" id="alquiler_genero_form">
+    <field name="name">Vista formulario de géneros</field>
+    <field name="model">alquiler.genero</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name" string="Género"/>
+                    <field name="description" string="Descripción"/>
+                    <field name="id" string="ID"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+    <!-- Vista tree de clientes -->
+
+    <record model="ir.ui.view" id="alquiler_cliente_tree">
+      <field name="name">Vista árbol de clientes</field>
+      <field name="model">alquiler.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Nombre"/>
+          <field name="surname" string="Apellidos"/>
+          <field name="id" string="ID"/>
+          <field name="prestamos" string="Préstamos"/>
+          <field name="type" string="Tipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista formulario de clientes -->
+
+  <record model="ir.ui.view" id="alquiler_cliente_form">
+    <field name="name">Vista formulario de clientes</field>
+    <field name="model">alquiler.cliente</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name" string="Nombre"/>
+                    <field name="surname" string="Apellidos"/>
+                    <field name="id" string="ID"/>
+                    <field name="prestamos" string="Préstamos"/>
+                    <field name="type" string="Tipo"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+    <!-- Vista tree de préstamos -->
+
+    <record model="ir.ui.view" id="alquiler_prestamo_tree">
+      <field name="name">Vista árbol de préstamos</field>
+      <field name="model">alquiler.prestamo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="pelicula_id" string="Película"/>
+          <field name="id" string="ID del préstamo"/>
+          <field name="client_id" string="Préstamos"/>
+          <field name="type" string="Tipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista formulario de préstamos -->
+
+    <record model="ir.ui.view" id="alquiler_prestamo_form">
+      <field name="name">Vista formulario de préstamos</field>
+      <field name="model">alquiler.prestamo</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="pelicula_id" string="Película"/>
+                    <field name="id" string="ID del préstamo"/>
+                    <field name="client_id" string="Préstamos"/>
+                    <field name="type" string="Tipo"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="alquiler_pelicula_action_window">
+      <field name="name">Acción de ventana para alquiler.pelicula</field>
+      <field name="res_model">alquiler.pelicula</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="alquiler_genero_action_window">
+      <field name="name">Acción de ventana para alquiler.genero</field>
+      <field name="res_model">alquiler.genero</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="alquiler_cliente_action_window">
+      <field name="name">Acción de ventana para alquiler.cliente</field>
+      <field name="res_model">alquiler.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="alquiler_prestamo_action_window">
+      <field name="name">Acción de ventana para alquiler.prestamo</field>
+      <field name="res_model">alquiler.prestamo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Alquiler" id="alquiler_menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Peliciula" id="alquiler_pelicula_menu_1" parent="alquiler_menu_root"/>
+    <menuitem name="Genero" id="alquiler_genero_menu_2" parent="alquiler_menu_root"/>
+    <menuitem name="Prestamo" id="alquiler_alquiler_menu_3" parent="alquiler_menu_root"/>
+    <menuitem name="Cliente" id="alquiler_cliente_menu_4" parent="alquiler_menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Ver peliculas" id="alquiler_pelicula_menu_1_list" parent="alquiler_pelicula_menu_1"
+              action="alquiler_pelicula_action_window"/>
+
+    <menuitem name="Ver géneros" id="alquiler_genero_menu_1_list" parent="alquiler_genero_menu_1"
+              action="alquiler_genero_action_window"/>
+
+    <menuitem name="Ver clientes" id="alquiler_cliente_menu_1_list" parent="alquiler_cliente_menu_1"
+              action="alquiler_cliente_action_window"/>
+
+    <menuitem name="Ver préstamos" id="alquiler_prestamo_menu_1_list" parent="alquiler_prestamo_menu_1"
+              action="alquiler_prestamo_action_window"/>
+
+
+  </data>
+</odoo>
