@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "alquiler_3758890",
+    'name': "alquiler",
 
     'summary': """
         Gestión de películas.
